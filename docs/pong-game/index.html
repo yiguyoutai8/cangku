@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乒乓球游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../" class="back-btn">← 返回菜单</a>
+    
+    <div class="container">
+        <h1>乒乓球游戏</h1>
+        <div class="game-info">
+            <div class="player-score">
+                <span class="label">玩家</span>
+                <span class="score" id="playerScore">0</span>
+            </div>
+            <div class="ai-score">
+                <span class="label">电脑</span>
+                <span class="score" id="aiScore">0</span>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        
+        <div class="instructions">
+            <p><strong>控制方式：</strong></p>
+            <ul>
+                <li>🖱️ 鼠标移动 - 控制左侧拨片上下移动</li>
+                <li>⬆️ ⬇️ 方向键 - 控制左侧拨片上下移动</li>
+                <li>🤖 右侧拨片由电脑自动控制</li>
+                <li>🔄 按 R 键重新开始游戏</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
