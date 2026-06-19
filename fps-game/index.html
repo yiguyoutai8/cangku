@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS 游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer"></div>
+    
+    <div id="ui">
+        <div id="crosshair"></div>
+        <div id="hud">
+            <div id="health">
+                <span>生命值:</span>
+                <div id="healthBar">
+                    <div id="healthFill"></div>
+                </div>
+                <span id="healthText">100/100</span>
+            </div>
+            <div id="ammo">
+                <span>弹药: <span id="ammoCount">30/120</span></span>
+            </div>
+            <div id="score">
+                <span>得分: <span id="scoreCount">0</span></span>
+            </div>
+        </div>
+        <div id="instructions">
+            <p><strong>WASD</strong> - 移动 | <strong>鼠标</strong> - 视角 | <strong>左键</strong> - 射击 | <strong>R</strong> - 换弹</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
