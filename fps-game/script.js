@@ -144,7 +144,7 @@ class Enemy {
             updateHealthDisplay();
             if (player.health <= 0) {
                 alert('游戏结束！得分：' + player.score);
-                location.reload();
+                window.location.href = '../';
             }
         }
     }
@@ -189,11 +189,16 @@ function shoot() {
     raycaster.setFromCamera({ x: 0, y: 0 }, camera);
     
     const enemyMeshes = enemies.map(e => e.mesh);
-    const intersects = raycaster.intersectObjects(enemyMeshes);
+    const intersects = raycaster.intersectObjects(enemyMeshes, true);
     
     if (intersects.length > 0) {
         // 查找被击中的敌人
-        const targetMesh = intersects[0].object.parent;
+        let targetMesh = intersects[0].object;
+        while (targetMesh.parent && targetMesh.parent !== scene) {
+            if (enemies.some(e => e.mesh === targetMesh)) break;
+            targetMesh = targetMesh.parent;
+        }
+        
         const enemy = enemies.find(e => e.mesh === targetMesh);
         
         if (enemy && enemy.takeDamage(25)) {
@@ -277,6 +282,10 @@ document.addEventListener('keydown', (e) => {
     
     if (e.key.toLowerCase() === 'r') {
         reload();
+    }
+    
+    if (e.key === 'Escape') {
+        window.location.href = '../';
     }
 });
 
